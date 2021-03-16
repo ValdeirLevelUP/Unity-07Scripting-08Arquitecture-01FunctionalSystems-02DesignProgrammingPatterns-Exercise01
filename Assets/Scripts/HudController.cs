@@ -31,6 +31,8 @@ public class HudController : MonoBehaviour
 
     [SerializeField] private Text _level;
 
+    [SerializeField] private Sprite _iconNothing;
+
     public event OnSelectSkill getSkillPlayer;
 
     private void Awake()
@@ -65,6 +67,12 @@ public class HudController : MonoBehaviour
                 _enemyIcon3.sprite = icon;
                 break;
         }
+    }
+    public void ResetSlots()
+    {
+        _playerIcon1.sprite = _iconNothing;
+        _playerIcon2.sprite = _iconNothing;
+        _playerIcon3.sprite = _iconNothing; 
     }
 
     public void TextLevel(int value)

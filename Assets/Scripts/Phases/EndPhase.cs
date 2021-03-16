@@ -8,7 +8,7 @@ public class EndPhase : AbstractPhase<BattleSystem>
     public override void Execute(BattleSystem fsm)
     {
         fsm.DestroyEnemy();
-
+        FindObjectOfType<HudController>().ResetSlots();
         fsm.ChangeAction(GameManager.Instance._beginningPhase);
     }
 }
